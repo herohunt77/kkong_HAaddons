@@ -66,15 +66,53 @@ type: socket 로 설정한 경우 아래 옵션 사용
   receivedelay: 10000    // 전송후 메시지 수신 지연 시간 1/1000초 단위
 ```
 
+
+
+## Home Assistant Configuration
+
+### Configuration.yaml 에 추가
+
+```yaml
+- platform: mqtt
+  name: 'Light1'
+  state_topic: 'homenet-js/Light1/status'
+  command_topic: 'homenet-js/Light1/command'
+
+- platform: mqtt
+  name: 'Light2'
+  state_topic: 'homenet-js/Light2/status'
+  command_topic: 'homenet-js/Light2/command'
+
+- platform: mqtt
+  name: 'Light3'
+  state_topic: 'homenet-js/Light3/status'
+  command_topic: 'homenet-js/Light3/command'
+```
+
+### Home Assistant에서 사전 설정 할 것
+- MQTT 를 통합 구성 요소에서 반드시 구성해야 합니다.
+- GUI 상으로 통합 구성요소를 추가해도 좋고, 아래 내용을 참고해서 Configuration.yaml 파일에 수동으로 추가해줘도 좋습니다.
+
+```yaml
+mqtt:
+  broker: 192.168.0.x
+```
+
+
+
 ## Support
 
 궁금한 점이 있으신가요??
 [JGP Space](https://jgpark.kr/)에서 이 월패드 애드온에 대한 문의를 받고 있습니다.
 
+
+
 또한 월패드 연동(RS485)에 대한 전반적인 정보와 그에 따른 문의는 아래에서 하실 수 있습니다.:
 
 - The [Home Assistant Korean Community][github].
 - The [Home Assistant 네이버카페][forum].
+
+
 
 [forum]: https://cafe.naver.com/koreassistant
 [github]: https://github.com/HAKorea/addons

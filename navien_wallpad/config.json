@@ -1,8 +1,8 @@
 {
-  "init": false,
   "name": "Navien Wallpad Controller with RS485",
   "version": "1.1",
   "slug": "navien_wallpad",
+  "init": false,
   "description": "Node.js 기반 경동나비엔 월패드 제어용 애드온",
   "arch": [
     "armhf",
@@ -14,7 +14,7 @@
   "map": [
     "share:rw"
   ],
-  "url": "https://github.com/JG-Park/HAaddons",
+  "url": "https://github.com/herohunt77/kkong_HAaddons",
   "startup": "application",
   "boot": "auto",
   "auto_uart": true,

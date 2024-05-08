@@ -22,7 +22,7 @@ RUN npm init -f
 #RUN npm install mqtt
 #RUN npm install serialport --build-from-source=serialport 
 
-WORKDIR /share
+WORKDIR /share/navien
 
 RUN chmod a+x /run.sh
 

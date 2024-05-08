@@ -24,7 +24,7 @@ RUN apk add --no-cache udev
 RUN npm init -f
 
 COPY package.json /
-RUN npm install
+RUN npm install mqtt
 
 
 #RUN npm install mqtt

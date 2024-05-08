@@ -21,7 +21,7 @@ RUN apk add --no-cache python3
 RUN apk add --no-cache linux-headers
 RUN apk add --no-cache udev
 
-RUN npm install
+#RUN npm install
 RUN npm init -f
 
 COPY package.json /

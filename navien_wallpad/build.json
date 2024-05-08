@@ -1,4 +1,5 @@
 {
+  init: false
   "squash": false,
   "build_from": {
     "aarch64": "ghcr.io/hassio-addons/base/aarch64:11.0.0",

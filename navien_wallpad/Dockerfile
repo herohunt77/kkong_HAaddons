@@ -14,6 +14,11 @@ COPY js /js
 #    npm install mqtt && \
 #    npm install serialport --build-from-source=serialport 
 
+RUN apt-get install jq npm make gcc g++ python3 linux-headers udev && \
+    npm init -f && \
+    npm install mqtt && \
+    npm install serialport --build-from-source=serialport 
+    
 WORKDIR /share
 
 RUN chmod a+x /run.sh

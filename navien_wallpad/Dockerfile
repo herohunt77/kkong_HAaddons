@@ -9,10 +9,17 @@ COPY run.sh /
 COPY js /js
 
 # Install requirements for add-on
-RUN apk add --no-cache jq npm make gcc python3 linux-headers udev && \
-    npm init -f && \
-    npm install mqtt && \
-    npm install serialport --build-from-source=serialport 
+RUN apk add --no-cache jq
+RUN apk add --no-cache npm
+RUN apk add --no-cache make
+RUN apk add --no-cache gcc
+RUN apk add --no-cache python3
+RUN apk add --no-cache linux-headers
+RUN apk add --no-cache udev
+
+RUN npm init -f
+RUN npm install mqtt
+RUN npm install serialport --build-from-source=serialport 
 
 WORKDIR /share
 

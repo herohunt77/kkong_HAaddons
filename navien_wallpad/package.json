@@ -1,5 +1,5 @@
 {
-  "name": "my_package",
+  "name": "kkong_HAaddons",
   "description": "",
   "version": "1.0.0",
   "scripts": {
@@ -12,6 +12,6 @@
     "mqtt": "^4.2.8",
     "serialport": "^9.2.8"
   },
-  "homepage": "https://github.com/monatheoctocat/my_package"
+  "homepage": "https://github.com/herohunt77/kkong_HAaddons"
 }
 

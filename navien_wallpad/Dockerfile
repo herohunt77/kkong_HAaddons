@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 COPY run.sh /
 COPY js /js
 
-WORKDIR /
+WORKDIR /share
 
 # Install requirements for add-on
 RUN apk add --no-cache jq

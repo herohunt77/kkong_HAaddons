@@ -24,12 +24,10 @@ RUN apk add --no-cache udev
 RUN npm init -f
 
 COPY package.json /
-RUN npm install mqtt
-
-
+#RUN npm install
 #RUN npm install mqtt
 #RUN npm install serialport --build-from-source=serialport 
-# RUN npm install serialport --unsafe-perm --build-from-source=serialport
+RUN npm install serialport --unsafe-perm --build-from-source=serialport
 
 RUN chmod a+x /run.sh
 

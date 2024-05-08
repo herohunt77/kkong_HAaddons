@@ -12,7 +12,8 @@ WORKDIR /share
 # COPY package.json /
 # RUN npm install
 # Install requirements for add-on
-RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev 
+#RUN apk add --no-cache jq npm make gcc g++ python3 linux-headers udev
+RUN apt-get install jq
 
 RUN chmod a+x /run.sh
 

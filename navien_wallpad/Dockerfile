@@ -8,6 +8,8 @@ ENV LANG C.UTF-8
 COPY run.sh /
 COPY js /js
 
+WORKDIR /share/navien
+
 # Install requirements for add-on
 RUN apk add --no-cache jq
 RUN apk add --no-cache npm
@@ -22,8 +24,6 @@ RUN apk add --no-cache udev
 RUN npm init -f
 #RUN npm install mqtt
 #RUN npm install serialport --build-from-source=serialport 
-
-WORKDIR /share/navien
 
 RUN chmod a+x /run.sh
 

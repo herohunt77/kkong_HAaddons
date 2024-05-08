@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 COPY run.sh /
 COPY js /js
 
-WORKDIR /share
+WORKDIR /
 
 # Install requirements for add-on
 RUN apk add --no-cache jq
@@ -22,6 +22,11 @@ RUN apk add --no-cache linux-headers
 RUN apk add --no-cache udev
 
 RUN npm init -f
+
+COPY package.json /
+RUN npm install
+
+
 #RUN npm install mqtt
 #RUN npm install serialport --build-from-source=serialport 
 

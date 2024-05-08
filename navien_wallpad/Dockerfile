@@ -20,7 +20,7 @@ RUN apk add --no-cache udev
 
 RUN npm init -f
 #RUN npm install mqtt
-RUN npm install serialport --build-from-source=serialport 
+#RUN npm install serialport --build-from-source=serialport 
 
 WORKDIR /share
 

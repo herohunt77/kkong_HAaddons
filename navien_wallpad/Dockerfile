@@ -13,7 +13,7 @@ WORKDIR /
 # Install requirements for add-on
 RUN apk add --no-cache jq
 RUN apk add --no-cache npm
-RUN apk add --no-cache g++
+#RUN apk add --no-cache g++
 RUN apk add --no-cache make
 RUN apk add --no-cache gcc
 

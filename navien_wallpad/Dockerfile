@@ -31,6 +31,6 @@ COPY package.json /
 RUN npm install serialport --unsafe-perm --build-from-source=serialport
 
 #RUN chmod a+x /run.sh
-RUN 777 /run.sh
+RUN chmod 777 /run.sh
 
 CMD [ "/run.sh" ]

@@ -1,4 +1,5 @@
 {
+  "init": false,
   "name": "Navien Wallpad Controller with RS485",
   "version": "1.1",
   "slug": "navien_wallpad",

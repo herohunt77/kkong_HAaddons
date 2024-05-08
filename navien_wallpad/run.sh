@@ -2,7 +2,7 @@
 #!/bin/sh
 
 CONFIG_PATH=/data/options.json
-SHARE_DIR=/share
+SHARE_DIR=/share/navien
 
 CUSTOM_FILE=$(jq --raw-output ".customfile" $CONFIG_PATH)
 MODEL=$(jq --raw-output ".model" $CONFIG_PATH)

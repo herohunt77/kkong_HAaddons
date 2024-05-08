@@ -1,4 +1,3 @@
-
 #!/bin/sh
 
 CONFIG_PATH=/data/options.json

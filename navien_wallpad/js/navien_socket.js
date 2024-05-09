@@ -67,7 +67,34 @@
  sock.connect(CONFIG.socket.port, CONFIG.socket.deviceIP, function() {
    log('[Socket] 소켓 서버(EW11 등)에 연결되었습니다.');
  });
- const parser = sock.pipe(new Delimiter({ delimiter: Buffer.from([0xf7]) }));
+ // const parser = sock.pipe(new Delimiter({ delimiter: Buffer.from([0xf7]) }));
+// ----------------------------------------------------------------------------
+const { Transform } = require('stream');
+class CustomDelimiter extends Transform {
+  constructor(options) {
+    super(options);
+    this.delimiter = options.delimiter;
+    this.buffer = Buffer.alloc(0);
+  }
+  _transform(chunk, encoding, callback) {
+    this.buffer = Buffer.concat([this.buffer, chunk]);
+    let delimiterIndex;
+    while ((delimiterIndex = this.buffer.indexOf(this.delimiter)) !== -1) {
+      const message = this.buffer.slice(0, delimiterIndex);
+      this.buffer = this.buffer.slice(delimiterIndex + this.delimiter.length);
+      this.push(message);
+    }
+    callback();
+  }
+  _flush(callback) {
+    if (this.buffer.length > 0) {
+      this.push(this.buffer);
+    }
+    callback();
+  }
+}
+const parser = sock.pipe(new CustomDelimiter({ delimiter: Buffer.from([0xf7]) }));
+// -------------------------------------------------------------------------------
 
  parser.on('data', buffer => {
    var sceneMatched = CONST.SCENES.find(scene => buffer.equals(scene.sceneHex));

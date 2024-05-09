@@ -28,7 +28,8 @@ COPY package.json /
 #RUN npm install
 #RUN npm install mqtt
 #RUN npm install serialport --build-from-source=serialport 
-RUN npm install serialport --unsafe-perm --build-from-source=serialport
+#RUN npm install serialport --unsafe-perm --build-from-source=serialport
+RUN npm install @serialport/parser-delimiter
 
 #RUN chmod a+x /run.sh
 RUN chmod 777 /run.sh

@@ -23,7 +23,7 @@ RUN npm init -f
 
 #RUN npm install
 #RUN npm install mqtt
-RUN npm install serialport --build-from-source=serialport 
+#RUN npm install serialport --build-from-source=serialport 
 #RUN npm install serialport --unsafe-perm --build-from-source=serialport
 #RUN npm install @serialport/parser-delimiter
 

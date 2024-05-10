@@ -115,6 +115,9 @@ const parser = sock.pipe(new CustomDelimiter({ delimiter: Buffer.from([0xf7]) })
    if(mqttReady) {
      var topics = topic.split('/');
      var msg = message.toString();
+
+log('[MQTT] (청취test)', topic, message, '[현재상태]', homeStatus[topic], '->', message.toString());
+    
      if(topics[2] == 'status') {
        log('[MQTT] (청취)', topic, message, '[현재상태]', homeStatus[topic], '->', message.toString());
        homeStatus[topic] = message.toString();
